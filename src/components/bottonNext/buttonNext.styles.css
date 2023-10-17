@@ -2,7 +2,7 @@
   background-color: var(--bg-form-clr);
   padding: 1.5rem;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
