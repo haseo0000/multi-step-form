@@ -1,0 +1,220 @@
+::placeholder {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #b6b6bd;
+}
+
+input {
+  --border-input-clr: #dbdadf;
+
+  padding: 0.7rem 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--border-input-clr);
+  outline: none;
+}
+
+.form-container {
+  background-color: var(--bg-form-clr);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 15px;
+}
+
+.input-layout {
+  display: grid;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.step1-section-layout {
+  display: grid;
+}
+
+/* .input-section > input + label {
+  margin-top: 1rem;
+} */
+
+/* STEP 2 STYLED */
+
+.step2-plan-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.step2-section-layout {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  border: 1px solid #dbdbdd;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &.selected-plan {
+    background-color: #f8f9fe;
+    border-color: #534c97;
+  }
+}
+
+.step2-toggle-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f8f9fe;
+  font-weight: 500;
+  color: #95959f;
+}
+
+.step2-toggle-layout > .selected {
+  color: #001131;
+}
+
+.step2-section-layout > div:nth-child(2) {
+  display: grid;
+  gap: 0.25rem;
+}
+
+/* STEP 3 STYLED */
+.step3-box-layout {
+  display: grid;
+  grid-template-columns: min-content 2fr min-content;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+
+  & input[type="checkbox"] {
+    display: none;
+  }
+
+  &.add {
+    border: 2px solid #7872b0;
+  }
+}
+
+.checkbox-layout {
+  position: relative;
+
+  & .checkmark {
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+  }
+
+  & input:checked ~ .checkmark {
+    background-color: #483fff;
+    border: none;
+  }
+
+  & .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+
+  & input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  & .checkmark:after {
+    width: 7px;
+    height: 14px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.step3-box-layout > .price-layout {
+  justify-self: flex-end;
+}
+
+/* STEP 4 STYLED */
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: lightgray;
+  margin-block: 1rem;
+}
+
+.step4-box-layout {
+  border-radius: 10px;
+  background-color: #f8f9fe;
+  padding: 1.5rem;
+}
+
+.step4-header-layout {
+  display: grid;
+  grid-template-columns: 2fr max-content;
+  align-items: center;
+}
+
+.step4-header-layout > .title-layout {
+  display: grid;
+
+  & span:first-child {
+    font-weight: bold;
+  }
+
+  & span:nth-child(2) {
+    color: gray;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.step4-header-layout > .price {
+  font-weight: bold;
+}
+
+.step4-details-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.step4-details-layout > * {
+  display: flex;
+  justify-content: space-between;
+
+  & span:first-child {
+    color: gray;
+  }
+}
+
+.step4-total-layout {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+
+  & span:first-child {
+    color: gray;
+  }
+
+  & span:nth-child(2) {
+    font-weight: bold;
+    color: #4540b7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .step2-plan-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .step2-section-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,34 @@
+.btn-next-container {
+  background-color: var(--bg-form-clr);
+  padding: 1.5rem;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-next-container.flex-space-between {
+  justify-content: space-between;
+}
+
+.btn-next-container > button {
+  padding: 0.75rem 1.25rem;
+  background-color: #03234c;
+  color: #fff;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-next-container > .btn-confirm {
+  background-color: #463ffd;
+}
+
+.btn-next-container > .Back-btn {
+  background-color: transparent;
+  color: #a4a5ae;
+}

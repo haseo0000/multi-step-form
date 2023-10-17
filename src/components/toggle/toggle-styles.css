@@ -1,0 +1,35 @@
+.toggle_Btn {
+  --width-toggle: 30px;
+  --border-raduis-toggle: 50px;
+
+  display: flex;
+  align-items: center;
+
+  width: var(--width-toggle);
+  height: 14px;
+  /* aspect-ratio: 1 / 0.5; */
+  border-radius: var(--border-raduis-toggle);
+  padding: 3px;
+  background-color: #03285b;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.toggle_Btn span {
+  width: calc(var(--width-toggle) / 2.5);
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: var(--border-raduis-toggle);
+
+  position: absolute;
+  transition: 300ms;
+}
+
+#btn {
+  display: none;
+}
+
+#btn:checked + .toggle_Btn span {
+  /* background-color: black; */
+  transform: translateX(150%);
+}

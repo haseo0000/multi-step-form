@@ -1,0 +1,19 @@
+.confirm-layout {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+
+  margin-block: 4rem;
+}
+
+.content-layout {
+  display: grid;
+  justify-items: center;
+}
+
+.content-layout > * {
+  letter-spacing: 0.5px;
+  line-height: 1.65rem;
+  color: #999a9e;
+  font-size: 1.125em;
+}

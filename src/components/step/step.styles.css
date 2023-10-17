@@ -1,0 +1,31 @@
+.step-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  padding-block: 2rem;
+}
+
+.step-active {
+  background-color: #c1e4ff;
+}
+
+.step-active > span {
+  color: black;
+}
+
+.step-item {
+  --border-step-clr: #e0ddff;
+
+  width: 40px;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  border: 1px solid var(--border-step-clr);
+  color: var(--border-step-clr);
+
+  display: grid;
+  place-items: center;
+}
+
+.step-item > span {
+  font-weight: bold;
+}
