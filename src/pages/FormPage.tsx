@@ -28,6 +28,12 @@ export type SelectDataT = {
   addOns: AddOnsT[];
 };
 
+export interface IErrors {
+  name: string;
+  email: string;
+  phone: string;
+}
+
 const INIT_DATA = {
   personalInfo: {
     name: "",
@@ -46,8 +52,40 @@ function FormPage() {
   const [step, setStep] = useState(1);
   const [selectData, setSelectData] = useState<SelectDataT>(INIT_DATA);
   const [isConfirm, setIsConfirm] = useState(false);
+  const [errors, setErrors] = useState<Partial<IErrors> | null>(null);
+
+  const validateInfo = () => {
+    // eslint-disable-next-line no-useless-escape
+    const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+    const error: Partial<IErrors> = {};
+    if (!selectData.personalInfo.name) {
+      error.name = "Name is required";
+    }
+    if (!selectData.personalInfo.email) {
+      error.email = "Email is required";
+    } else if (!selectData.personalInfo.email.match(regexEmail)) {
+      error.email = "Email is not valid";
+    }
+
+    if (!selectData.personalInfo.phone) {
+      error.phone = "Phone is required";
+    }
+
+    setErrors(error);
+
+    if (Object.keys(error).length !== 0) {
+      return false;
+    }
+
+    return true;
+  };
 
   const handleNextStep = () => {
+    if (!validateInfo()) {
+      return;
+    }
+
     if (step < 4) {
       setStep((prev) => prev + 1);
       return;
@@ -167,6 +205,7 @@ function FormPage() {
               handleSelectedMonthOrYearPlan={handleSelectedMonthOrYearPlan}
               handlePersonalInfo={handlePersonalInfo}
               handleAddons={handleAddons}
+              errors={errors}
             />
           )}
         </div>

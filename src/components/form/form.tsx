@@ -1,4 +1,4 @@
-import { PersonalInfo, SelectDataT } from "../../pages/FormPage";
+import { IErrors, PersonalInfo, SelectDataT } from "../../pages/FormPage";
 import "./form-styles.css";
 import FormStepFour from "./formStepFour";
 import FormStepOne from "./formStepOne";
@@ -13,6 +13,7 @@ type Props = {
   handleSelectedMonthOrYearPlan: (val: boolean) => void;
   handlePersonalInfo: ({ name, email, phone }: PersonalInfo) => void;
   handleAddons: (addons: string) => void;
+  errors: Partial<IErrors> | null;
 };
 
 const Form = ({
@@ -22,6 +23,7 @@ const Form = ({
   handleSelectedMonthOrYearPlan,
   handlePersonalInfo,
   handleAddons,
+  errors,
 }: Props) => {
   const showTitieAndContent = () => {
     const contextObj: { title: string; content: string } = {
@@ -52,7 +54,11 @@ const Form = ({
       <FormTitle titleAndContent={showTitieAndContent()} />
       <div className="input-layout">
         {step === 1 && (
-          <FormStepOne selectData={selectData} handlePersonalInfo={handlePersonalInfo} />
+          <FormStepOne
+            selectData={selectData}
+            handlePersonalInfo={handlePersonalInfo}
+            errors={errors}
+          />
         )}
         {step === 2 && (
           <FormStepTwo

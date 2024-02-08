@@ -12,7 +12,8 @@ function FormStepThree({ selectData, handleAddons }: Props) {
 
   return (
     <>
-      <label className={`step3-box-layout ${checkedHaveAddons("onlineService") && "add"}`}>
+      <label
+        className={`step3-box-layout ${checkedHaveAddons("onlineService") && "add"}`}>
         <div className="checkbox-layout">
           <input
             type="checkbox"
@@ -30,7 +31,8 @@ function FormStepThree({ selectData, handleAddons }: Props) {
           <span>{selectData.isPlanYearly ? "+$10/yr" : "+$1/mo"}</span>
         </div>
       </label>
-      <label className={`step3-box-layout ${checkedHaveAddons("largerStorage") && "add"}`}>
+      <label
+        className={`step3-box-layout ${checkedHaveAddons("largerStorage") && "add"}`}>
         <div className="checkbox-layout">
           <input
             type="checkbox"

@@ -83,7 +83,7 @@ input {
 /* STEP 3 STYLED */
 .step3-box-layout {
   display: grid;
-  grid-template-columns: min-content 2fr min-content;
+  grid-template-columns: min-content 1fr 1fr;
   align-items: center;
   gap: 1rem;
   padding: 1rem;
@@ -206,6 +206,11 @@ input {
     font-weight: bold;
     color: #4540b7;
   }
+}
+
+.error-text {
+  color: red;
+  font-weight: bold;
 }
 
 @media (min-width: 1024px) {
